@@ -16,16 +16,16 @@ class GamesTable
         }
 
         $query = DB::prepare(
-            'INSERT INTO games_export (id, img, name, genre_id, description, price) ' .
+            'INSERT INTO games_import (id, img, name, genre_id, description, price) ' .
             'VALUES (:id, :img, :name, :genre_id, :description, :price)'
         );
 
-        $query->bindValue(':id', 1);
-        $query->bindValue(':img', 2);
-        $query->bindValue(':name', 3);
-        $query->bindValue(':genre_id', 4);
-        $query->bindValue(':description', 5);
-        $query->bindValue(':price', 6);
+        $query->bindValue(':id', null);
+        $query->bindValue(':img', null);
+        $query->bindValue(':name', null);
+        $query->bindValue(':genre_id', null);
+        $query->bindValue(':description', null);
+        $query->bindValue(':price', null);
 
         try {
             $query->execute();
